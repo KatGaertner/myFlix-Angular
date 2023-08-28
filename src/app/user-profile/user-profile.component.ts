@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,14 +9,33 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class UserProfileComponent {
   userData: any = {};
-  constructor(public fetchApiData: FetchApiDataService) {}
+  favoriteMovies: any[] = [];
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getUser();
+    this.getFaves();
   }
 
   getUser(): void {
     const data: string | null = localStorage.getItem('userData');
     if (data) this.userData = JSON.parse(data);
+  }
+
+  getFaves(): void {
+    const data: string | null = localStorage.getItem('movies');
+    if (data) {
+      const movies = JSON.parse(data);
+      this.favoriteMovies = movies.filter((el: any) =>
+        this.userData.favorites.includes(el._id)
+      );
+    }
+  }
+
+  toMain(): void {
+    this.router.navigate(['movies']);
   }
 }

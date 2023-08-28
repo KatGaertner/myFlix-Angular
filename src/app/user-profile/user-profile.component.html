@@ -1,7 +1,14 @@
 <div>
+  <button (click)="toMain()">Back to Movies</button>
   <h1>Your Profile</h1>
   <div>Username: {{ userData.name }}</div>
   <div>E-Mail: {{ userData.email }}</div>
   <div>Birthday: {{ userData.birthday }}</div>
-  <div>Your favorites: {{ userData.favorites }}</div>
+  <div>
+    Your favorites:
+    <app-movie-list
+      [movies]="favoriteMovies"
+      style="display: flex"
+    ></app-movie-list>
+  </div>
 </div>
