@@ -63,4 +63,13 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  &::-webkit-scrollbar {
+    width: 15px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: black;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(33, 33, 33, 1);
+  }
 }
