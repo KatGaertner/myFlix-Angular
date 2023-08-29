@@ -1,0 +1,23 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.main {
+  width: 70vw;
+  min-width: 280px;
+  margin: auto;
+}
+
+.wrapper {
+  padding-bottom: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.favorites {
+  max-width: 100%;
+}

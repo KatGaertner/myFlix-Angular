@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
   movies: any[] = [];
+  featured: any[] = [];
+
   constructor(
     public fetchApiData: FetchApiDataService,
     private router: Router
@@ -27,6 +29,7 @@ export class MainPageComponent implements OnInit {
         localStorage.setItem('movies', JSON.stringify(resp));
       });
     }
+    this.featured = this.movies.filter((movie) => movie.featured === true);
   }
 
   toProfile(): void {

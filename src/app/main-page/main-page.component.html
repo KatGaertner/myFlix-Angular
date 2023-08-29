@@ -1,5 +1,16 @@
-<div>
-  <button (click)="toProfile()">To profile</button>
-  <button>Logout</button>
-  <app-movie-list [movies]="movies"></app-movie-list>
+<mat-toolbar>
+  <button mat-button color="primary" routerLink="../profile">
+    See Profile
+  </button>
+  <button mat-raised-button color="accent">Logout</button>
+</mat-toolbar>
+<div class="main">
+  <div *ngIf="featured">
+    <h1>Featured Movies</h1>
+    <app-movie-list [movies]="featured"></app-movie-list>
+  </div>
+  <div *ngIf="movies">
+    <h1>All Movies</h1>
+    <app-movie-list [movies]="movies"></app-movie-list>
+  </div>
 </div>

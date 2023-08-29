@@ -1,14 +1,21 @@
-<div>
-  <button (click)="toMain()">Back to Movies</button>
+<mat-toolbar>
+  <button mat-button color="primary" routerLink="../movies">
+    Back to Movies
+  </button>
+
+  <button mat-raised-button color="accent">Logout</button>
+</mat-toolbar>
+<div class="main">
   <h1>Your Profile</h1>
-  <div>Username: {{ userData.name }}</div>
-  <div>E-Mail: {{ userData.email }}</div>
-  <div>Birthday: {{ userData.birthday }}</div>
-  <div>
-    Your favorites:
-    <app-movie-list
-      [movies]="favoriteMovies"
-      style="display: flex"
-    ></app-movie-list>
-  </div>
+  <mat-list role="list">
+    <mat-list-item role="listitem">Username: {{ userData.name }}</mat-list-item>
+    <mat-list-item role="listitem">E-Mail: {{ userData.email }}</mat-list-item>
+    <mat-list-item role="listitem"
+      >Birthday: {{ userData.birthday }}</mat-list-item
+    >
+  </mat-list>
+  <h2>Your favorites:</h2>
+</div>
+<div class="wrapper">
+  <app-movie-list [movies]="favoriteMovies" class="favorites"></app-movie-list>
 </div>
