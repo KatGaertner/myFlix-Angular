@@ -48,7 +48,6 @@ const appRoutes: Routes = [
     GenrePageComponent,
     DirectorPageComponent,
     MoviePageComponent,
-    // UserRegistrationFormComponent
   ],
   imports: [
     BrowserModule,

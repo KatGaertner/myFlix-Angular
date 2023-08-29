@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,10 +9,7 @@ import { Router } from '@angular/router';
 export class UserProfileComponent {
   userData: any = {};
   favoriteMovies: any[] = [];
-  constructor(
-    public fetchApiData: FetchApiDataService,
-    private router: Router
-  ) {}
+  constructor(public fetchApiData: FetchApiDataService) {}
 
   ngOnInit(): void {
     this.getUser();

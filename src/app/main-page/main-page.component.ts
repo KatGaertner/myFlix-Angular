@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -11,10 +10,7 @@ export class MainPageComponent implements OnInit {
   movies: any[] = [];
   featured: any[] = [];
 
-  constructor(
-    public fetchApiData: FetchApiDataService,
-    private router: Router
-  ) {}
+  constructor(public fetchApiData: FetchApiDataService) {}
 
   ngOnInit(): void {
     this.getMovies();
