@@ -1,0 +1,13 @@
+<div style="padding: 20px">
+  <h3>{{ data.director }}</h3>
+  <mat-spinner *ngIf="!director"></mat-spinner>
+  <div *ngIf="director">
+    <div style="font-style: italic; margin-bottom: 10px">
+      {{ "*" + director.birthyear }}
+      {{ director.deathyear ? ",  \u271D" + director.deathyear : "" }}
+    </div>
+    <div>
+      {{ director.biography }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div style="padding: 20px">
+  <h3>{{ data.genre }}</h3>
+  <mat-spinner *ngIf="!genre"></mat-spinner>
+  <div *ngIf="genre">
+    {{ genre.description }}
+  </div>
+</div>

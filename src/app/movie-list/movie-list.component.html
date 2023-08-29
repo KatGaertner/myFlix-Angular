@@ -10,9 +10,23 @@
     <img [src]="movie.imageURL" [alt]="movie.title" class="card-img" />
 
     <mat-card-actions>
-      <button mat-button color="primary">Genre</button>
-      <button mat-button color="primary">Director</button>
-      <button mat-button color="primary">Synopsis</button>
+      <button
+        mat-button
+        color="primary"
+        (click)="openGenreDialog(movie.genres[0].name)"
+      >
+        Genre
+      </button>
+      <button
+        mat-button
+        color="primary"
+        (click)="openDirectorDialog(movie.directors[0].name)"
+      >
+        Director
+      </button>
+      <button mat-button color="primary" (click)="openMovieDialog(movie)">
+        Synopsis
+      </button>
       <button mat-icon-button (click)="toggleFave(movie._id)">
         <mat-icon>{{
           isFave(movie._id) ? "favorite" : "favorite_border"

@@ -1,6 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { DirectorPageComponent } from '../director-page/director-page.component';
+import { GenrePageComponent } from '../genre-page/genre-page.component';
+import { MoviePageComponent } from '../movie-page/movie-page.component';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,9 +14,31 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MovieListComponent {
   constructor(
     public fetchApiData: FetchApiDataService,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    public dialog: MatDialog
   ) {}
   @Input() movies?: any[];
+
+  openMovieDialog(movie: any): void {
+    this.dialog.open(MoviePageComponent, {
+      width: '280px',
+      data: { movie },
+    });
+  }
+
+  openGenreDialog(genre: string): void {
+    this.dialog.open(GenrePageComponent, {
+      width: '280px',
+      data: { genre },
+    });
+  }
+
+  openDirectorDialog(director: string): void {
+    this.dialog.open(DirectorPageComponent, {
+      width: '280px',
+      data: { director },
+    });
+  }
 
   isFave(movieID: string): Boolean {
     const data: string | null = localStorage.getItem('userData');
