@@ -32,7 +32,7 @@ export class MainPageComponent implements OnInit {
     this.featured = this.movies.filter((movie) => movie.featured === true);
   }
 
-  toProfile(): void {
-    this.router.navigate(['profile']);
+  logout(): void {
+    localStorage.clear();
   }
 }

@@ -35,7 +35,7 @@ export class UserProfileComponent {
     }
   }
 
-  toMain(): void {
-    this.router.navigate(['movies']);
+  logout(): void {
+    localStorage.clear();
   }
 }

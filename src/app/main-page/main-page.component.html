@@ -2,7 +2,9 @@
   <button mat-button color="primary" routerLink="../profile">
     See Profile
   </button>
-  <button mat-raised-button color="accent">Logout</button>
+  <button mat-raised-button color="accent" routerLink="../" (click)="logout()">
+    Logout
+  </button>
 </mat-toolbar>
 <div class="main">
   <div *ngIf="featured">
