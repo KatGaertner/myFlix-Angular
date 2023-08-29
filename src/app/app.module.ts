@@ -29,6 +29,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { GenrePageComponent } from './genre-page/genre-page.component';
 import { DirectorPageComponent } from './director-page/director-page.component';
 import { MoviePageComponent } from './movie-page/movie-page.component';
+import { HorizontalScrollDirective } from './horizontal-scroll.directive';
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MainPageComponent },
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     GenrePageComponent,
     DirectorPageComponent,
     MoviePageComponent,
+    HorizontalScrollDirective,
   ],
   imports: [
     BrowserModule,
