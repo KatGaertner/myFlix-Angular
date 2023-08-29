@@ -56,3 +56,61 @@ mat-card-actions {
   display: flex;
   justify-content: space-evenly;
 }
+
+.scroll-shadows {
+  $shadow-width: 5vw;
+  $scrollbar-height: 10px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    width: $shadow-width;
+    height: calc(100% - $scrollbar-height);
+    top: 0;
+    right: 0;
+    background: rgb(48, 48, 48);
+    background: linear-gradient(
+      90deg,
+      rgba(48, 48, 48, 0) 0%,
+      rgba(48, 48, 48, 1) 100%
+    );
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: $shadow-width;
+    height: calc(100% - $scrollbar-height);
+    top: 0;
+    left: 0;
+    background: rgb(48, 48, 48);
+    background: linear-gradient(
+      -90deg,
+      rgba(48, 48, 48, 0) 0%,
+      rgba(48, 48, 48, 1) 100%
+    );
+    z-index: 1;
+  }
+  & mat-card:first-child {
+    margin-left: $shadow-width;
+  }
+  & mat-card:last-child {
+    margin-right: $shadow-width;
+  }
+  & > .scrolling-wrapper-flexbox::-webkit-scrollbar {
+    scroll-padding-left: $shadow-width;
+    scroll-padding-right: $shadow-width;
+    height: $scrollbar-height;
+    border-radius: calc($scrollbar-height / 2);
+  }
+  & > .scrolling-wrapper-flexbox::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: calc($scrollbar-height / 2);
+  }
+  & > .scrolling-wrapper-flexbox::-webkit-scrollbar-track {
+    // background-color: rgba(32, 32, 32, 1);
+    background-color: transparent;
+    border-radius: calc($scrollbar-height / 2);
+    margin-left: $shadow-width;
+    margin-right: $shadow-width;
+  }
+}
