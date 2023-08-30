@@ -27,6 +27,7 @@ This project utilizes:
 - [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0
 - [Angular Material](https://material.angular.io/) design
 
+<a name="webpage-cut"></a>
 ## Installation
 
 To run the app locally, follow these steps:
