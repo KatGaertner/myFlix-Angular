@@ -12,6 +12,15 @@ The app is hosted on [Github Pages](https://katgaertner.github.io/myFlix-Angular
 - Movie Details: Users can view details about a movie, a director or a genre.
 - Favorites List: Users can curate their own favorites list by adding and removing movies at their convenience.
 
+## Screenshots
+
+<a href="https://github.com/KatGaertner/myFlix-Angular/blob/main/screenshots/mobile1.jpeg">
+<img src="https://github.com/KatGaertner/myFlix-Angular/blob/main/screenshots/mobile1.jpeg?raw=true" alt="Mobile screenshot" height="200px"/></a>
+<a href="https://github.com/KatGaertner/myFlix-Angular/blob/main/screenshots/mobile2.jpeg">
+<img src="https://github.com/KatGaertner/myFlix-Angular/blob/main/screenshots/mobile2.jpeg?raw=true" alt="Mobile screenshot" height="200px"/></a>
+<a href="https://github.com/KatGaertner/myFlix-Angular/blob/main/screenshots/desktop1.png">
+<img src="https://github.com/KatGaertner/myFlix-Angular/blob/main/screenshots/desktop1.png?raw=true" alt="Desktop screenshot" height="200px"/></a>
+
 ## Technologies
 This project utilizes:
 
