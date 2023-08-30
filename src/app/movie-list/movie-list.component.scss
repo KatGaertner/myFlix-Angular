@@ -96,6 +96,10 @@ mat-card-actions {
   & mat-card:last-child {
     margin-right: $shadow-width;
   }
+  & > .scrolling-wrapper-flexbox {
+    scrollbar-color: black rgba(32, 32, 32, 1);
+    scrollbar-width: thin;
+  }
   & > .scrolling-wrapper-flexbox::-webkit-scrollbar {
     scroll-padding-left: $shadow-width;
     scroll-padding-right: $shadow-width;
