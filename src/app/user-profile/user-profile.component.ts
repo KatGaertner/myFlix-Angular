@@ -7,8 +7,9 @@ import { FetchApiDataService } from '../fetch-api-data.service';
   styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent {
-  userData: any = {};
+  userData: any = null;
   favoriteMovies: any[] = [];
+  birthday: any = null;
   constructor(public fetchApiData: FetchApiDataService) {}
 
   ngOnInit(): void {
@@ -18,7 +19,18 @@ export class UserProfileComponent {
 
   getUser(): void {
     const data: string | null = localStorage.getItem('userData');
-    if (data) this.userData = JSON.parse(data);
+    if (data) {
+      this.userData = JSON.parse(data);
+      if (this.userData.birthday) {
+        console.log(this.userData.birthday);
+        const dateFormatter = new Intl.DateTimeFormat(undefined, {
+          timeZone: 'UTC',
+          dateStyle: 'long',
+        });
+        console.log(dateFormatter.format(new Date(this.userData.birthday)));
+        this.birthday = dateFormatter.format(new Date(this.userData.birthday));
+      }
+    }
   }
 
   getFaves(): void {

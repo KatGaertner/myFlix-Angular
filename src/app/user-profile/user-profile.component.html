@@ -8,11 +8,11 @@
 <div class="main">
   <h1>Your Profile</h1>
   <mat-list role="list">
-    <mat-list-item role="listitem">Username: {{ userData.name }}</mat-list-item>
-    <mat-list-item role="listitem">E-Mail: {{ userData.email }}</mat-list-item>
     <mat-list-item role="listitem"
-      >Birthday: {{ userData.birthday }}</mat-list-item
+      >Username: {{ userData?.name }}</mat-list-item
     >
+    <mat-list-item role="listitem">E-Mail: {{ userData?.email }}</mat-list-item>
+    <mat-list-item role="listitem">Birthday: {{ birthday }}</mat-list-item>
   </mat-list>
   <h2>Your favorites:</h2>
 </div>
