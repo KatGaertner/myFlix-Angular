@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { FetchApiDataService } from '../fetch-api-data.service';
 
+/**
+ * This page displays the user's data and their favorite movies.
+ */
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -10,13 +12,21 @@ export class UserProfileComponent {
   userData: any = null;
   favoriteMovies: any[] = [];
   birthday: any = null;
-  constructor(public fetchApiData: FetchApiDataService) {}
+  constructor() {}
 
+  /**
+   * On init, gets the user's data with {@link getUser} and calculates a list with the
+   * details of the user's favorite movies with {@link getFaves}.
+   */
   ngOnInit(): void {
     this.getUser();
     this.getFaves();
   }
 
+  /**
+   * Gets the user's data from `localStorage` (`'userData`) and also converts their
+   * birthday into a local date format.
+   */
   getUser(): void {
     const data: string | null = localStorage.getItem('userData');
     if (data) {
@@ -33,6 +43,11 @@ export class UserProfileComponent {
     }
   }
 
+  /**
+   * Makes a list of the details on the user's favorite movies.
+   * The movie data is taken from the `localStorage` variable 'movies' and filtered by the user's
+   * list of favorites.
+   */
   getFaves(): void {
     const data: string | null = localStorage.getItem('movies');
     if (data) {
@@ -43,6 +58,9 @@ export class UserProfileComponent {
     }
   }
 
+  /**
+   * Clears `localStorage`. (The redirection to the base path/welcome page is declared in the html template.)
+   */
   logout(): void {
     localStorage.clear();
   }
